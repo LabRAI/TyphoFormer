@@ -7,7 +7,7 @@ import pandas as pd
 from torch.utils.data import DataLoader
 from torch.optim.lr_scheduler import CosineAnnealingLR
 from TyphoFormer import TyphoFormer
-from data import MyData  # 你需要确保data.py中有定义MyData类
+from data import MyData
 
 def setup_seed(seed):
     torch.manual_seed(seed)
@@ -23,8 +23,8 @@ def train(model_name, load_pretrained=True):
     max_epochs = 3000
 
     setup_seed(10086)
-    train_dataset = MyData(data_path='./data/TrainData.json', l=4, frac=1)
-    val_dataset = MyData(data_path='./data/TestData.json', l=4)
+    train_dataset = MyData(data_path='/data/TrainData.json',l=4,frac=1)
+    val_dataset = MyData(data_path='/data/TestData.json',l=4)
 
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
@@ -35,10 +35,10 @@ def train(model_name, load_pretrained=True):
     os.makedirs(f'checkpoints/{model_name}', exist_ok=True)
 
     if load_pretrained and os.path.exists(ckpt_path):
-        print(f"🔁 Loading pretrained weights from {ckpt_path}")
+        print(f"Loading pretrained weights from {ckpt_path}")
         model.load_state_dict(torch.load(ckpt_path))
     else:
-        print("🚀 Training from scratch")
+        print("Training from scratch")
 
     criterion = nn.MSELoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
@@ -70,7 +70,7 @@ def train(model_name, load_pretrained=True):
                 rmse = torch.sqrt(torch.mean((output.squeeze(1) - target) ** 2))
                 if rmse < best_rmse:
                     best_rmse = rmse
-                    print(f"✅ New best RMSE: {rmse.item():.4f}, saving model...")
+                    print(f"New best RMSE: {rmse.item():.4f}, saving model...")
                     torch.save(model.state_dict(), ckpt_path)
 
         history.append((epoch, avg_train_loss, rmse.item()))
@@ -114,4 +114,4 @@ if __name__ == '__main__':
     model_name = 'TyphoFormer'
     train(model_name, load_pretrained=not args.scratch)
     test(model_name)
-    print('✅ Training and Testing Complete!')
+    print('Training and Testing Complete!')
