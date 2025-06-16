@@ -5,7 +5,7 @@ from typing import List
 from bert_embedder import BERTEmbedder
 
 # 参数设置
-input_dim = 7             # 时间序列的每条记录长度
+input_dim = 4             # 时间序列的每条记录长度
 embedding_dim = 768       # 与 BERT 输出维度保持一致
 window_size = 4           # 滑动窗口长度 l
 
