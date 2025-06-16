@@ -84,7 +84,7 @@ def train(model_name, load_pretrained=True):
 
 def test(model_name):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    test_dataset = MyData(data_path='./data/TestData.json', l=4, frac=1)
+    test_dataset = MyData(data_path='/data/TestData.json', l=4, frac=1)
     test_loader = DataLoader(test_dataset, batch_size=4096, shuffle=False)
 
     model = TyphoFormer().to(device)
