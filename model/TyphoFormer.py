@@ -10,7 +10,7 @@ TyphoFormer: Language-Enhanced Spatio-Temporal Transformer for Typhoon Track For
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from model.ST-Transformer import SpatialTemporalFormer  # 复用STAEformer的编码器
+from model.STTransformer import SpatialTemporalFormer  # 复用STAEformer的编码器
 from model.PGF_module import PromptGatingFusion  # Step3中实现的PGF模块
 
 
