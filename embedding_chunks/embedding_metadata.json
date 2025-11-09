@@ -1,0 +1,10 @@
+{
+    "model": "all-MiniLM-L6-v2",
+    "input_file": "HURDAT_2new_3000_with_descriptions_clean.csv",
+    "num_records": 3004,
+    "embedding_dim": 384,
+    "chunk_size": 500,
+    "num_chunks": 7,
+    "created_at": "2025-11-08 15:20:22",
+    "device_used": "cuda"
+}
