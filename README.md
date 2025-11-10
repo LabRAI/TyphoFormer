@@ -6,7 +6,7 @@ Language-Augmented Transformer for Accurate Typhoon (Hurricane) Track Forecastin
 
 
 ## 🧱 2.Repository Structure
-```
+```bash
 TyphoFormer/
 ├── model/
 │   ├── STTransformer.py       # Spatio-Temporal backbone
