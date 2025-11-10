@@ -1,8 +1,14 @@
 # 🏆[SIGSPATIAL 25 Best Short Paper Award] TyphoFormer
 Language-Augmented Transformer for Accurate Typhoon (Hurricane) Track Forecasting
 
-## 🧭 Project Overview
+## 🧭 1.Project Overview
 > TyphoFormer is a hybrid multi-modal Transformer designed for tropical cyclone (other names: Hurricane, Typhoon) track prediction. It integrates `numerical meteorological features` and `LLM-augmented language embeddings` through a Prompt-aware Gating Fusion (PGF) module, followed by a spatio-temporal Transformer backbone and autoregressive decoding for track forecasting.
+
+
+## 🧱 2.Repository Structure
+```
+
+```
 
 
 ## 🫶 How to Cite:
