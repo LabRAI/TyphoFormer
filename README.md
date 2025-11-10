@@ -103,7 +103,8 @@ D_TEXT = 384 #dim of language embedding (all-MiniLM-L6-v2）
 ```
 
 ## 📊 6.Performance Results
-<img width="600" alt="image" src="">
+<img width="600" alt="image" src="https://github.com/LabRAI/TyphoFormer/blob/main/assets/Table1_Experimental_results.png">
+
 
 <img width="500" alt="image" src="https://github.com/LabRAI/TyphoFormer/blob/main/assets/MILTON_Track_Prediction.png">
 
