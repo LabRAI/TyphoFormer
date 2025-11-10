@@ -47,8 +47,11 @@ numpy
 ## 🧩 4. Data Preparation
 
 (1) Step 1: Use `generate_text_description_new.py` to create GPT-4o enhanced natural language descriptions for each typhoon record.
+
 (2) Step 2: Covert textual descriptions to embeddings using `generate_text_embeddings.py` (MiniLM).
+
 (3) Step 3: Combine numerical and textual embeddings into ready-to-use dataset using `prepare_typhoformer_data.py`.
+
 (4) Step 4: The final dataset is stored under:
 ```
 data/train/xxx.npy
