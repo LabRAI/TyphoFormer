@@ -33,6 +33,17 @@ TyphoFormer/
 └── README.md
 ```
 
+## ⚙️ 3. Environment Setup
+```
+torch >= 2.1.0
+transformers
+sentence-transformers
+openai
+tqdm
+pandas
+numpy
+```
+
 
 ## 🫶 How to Cite:
 > If you find our work useful, please kindly cite our paper, thank you for your appreciation!
