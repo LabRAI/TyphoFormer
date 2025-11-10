@@ -26,7 +26,7 @@ TyphoFormer/
 │
 ├── HURDAT_2new_3000.csv       # Raw typhoon dataset, includes 4 years' typhoon data here as an example
 ├── generate_text_description_new.py   # GPT-based language generation
-├── generate_text_embeddings.py        # Embedding generation via MiniLM
+├── generate_text_embeddings.py        # Embedding generation via MiniLM-L6-v2
 ├── prepare_typhoformer_data.py        # Dataset preparation script
 ├── train_typhoformer.py               # Training entry point
 ├── eval_typhoformer.py                # Evaluation script
