@@ -7,7 +7,30 @@ Language-Augmented Transformer for Accurate Typhoon (Hurricane) Track Forecastin
 
 ## 🧱 2.Repository Structure
 ```
-
+TyphoFormer/
+├── model/
+│   ├── STTransformer.py       # Spatio-Temporal backbone
+│   ├── PGF_module.py          # Prompt-aware Gating Fusion module
+│   ├── TyphoFormer.py         # TyphoFormer model architecture
+│
+│
+├── data/                      # Processed Typhoon datasets in '.npy' files
+│   ├── train/
+│   ├── val/
+│   └── test/
+│
+├── embedding_chunks/          # Sentence-transformer text embeddings
+│   ├── emb_chunk_000.npy
+│   ├── ......
+│   ├── emb_chunk_006.npy ...
+│
+├── HURDAT_2new_3000.csv       # Raw typhoon dataset, includes 4 years' typhoon data
+├── generate_text_description_new.py   # GPT-based language generation
+├── generate_text_embeddings.py        # Embedding generation via MiniLM
+├── prepare_typhoformer_data.py        # Dataset preparation script
+├── train_typhoformer.py               # Training entry point
+├── eval_typhoformer.py                # Evaluation script
+└── README.md
 ```
 
 
