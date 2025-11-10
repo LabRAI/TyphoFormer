@@ -46,9 +46,9 @@ numpy
 
 ## 🧩 4. Data Preparation
 
-(1) Step 1: Use `generate_text_description_new.py` to create GPT-4o enhanced natural language descriptions for each typhoon record.
+(1) Step 1: Use `generate_text_description_new.py` to create GPT-4o enhanced natural language descriptions for each typhoon record. (We already provided the generated language descriptions with this repository).
 
-(2) Step 2: Covert textual descriptions to embeddings using `generate_text_embeddings.py` (MiniLM).
+(2) Step 2: Covert textual descriptions to embeddings using `generate_text_embeddings.py` (model: MiniLM).
 
 (3) Step 3: Combine numerical and textual embeddings into ready-to-use dataset using `prepare_typhoformer_data.py`.
 
@@ -58,9 +58,12 @@ data/train/xxx.npy
 data/val/yyy.npy
 data/test/zzz.npy
 ```
-- **In this repository, we only provide 4 years' of ground-truth typhoon records from HURDAT2, the related GPT-4o generated language descriptions, as well as the MiniLM generated language embeddings for you to try. However, in our own experiments, we use over 20+ years' Typhoon records and LLM-generated natural language descriptions as our database.**
+<span style="color:#CC0033;font-weight:bold">[NOTICE]</span>
+
+- **In this repository, we already provide four-year ground-truth typhoon records from HURDAT2, and the corresponding GPT-4o generated language descriptions, as well as the MiniLM generated language embeddings for you to try. However, in our own experiments, we use over 20+ years' Typhoon records and LLM-generated natural language descriptions as our database.**
 
 - The raw numerical typhoon records from 2020-2024 is provided in `HURDAT_2new_3000.csv`
+- If you want to generate your own language context descriptions using GPTs, make sure you have a valid OpenAI API Key and put it in the `generate_text_description_new.py`.
 
 Each `.npy`file contains one piece of typhoon track record formatted as:
 ```
