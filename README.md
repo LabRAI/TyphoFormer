@@ -10,5 +10,11 @@ python TyphoFormertrain.py --scratch
 
 ## 🫶How to Cite:
 ```
-
+@inproceedings{lityphoformer2025,
+author = {Li, Lincan and Ozguven, Eren Erman and Zhao, Yue and Wang, Guang and Xie, Yiqun and Dong, Yushun},
+title = {Enhancing Spatio-temporal Quantile Forecasting with Curriculum Learning: Lessons Learned},
+location = {Minnesota, MN, USA},
+series = {SIGSPATIAL '25},
+year = {2025}
+}
 ```
