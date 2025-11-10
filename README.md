@@ -72,6 +72,18 @@ X = data["input"]
 Y = data["target"]
 ```
 
+## 🚀 6.Training and Evaluation
+
+```bash
+# Train
+python train_typhoformer.py
+
+# Evaluate
+python eval_typhoformer.py
+
+```
+>Training logs will be saved automatically under /checkpoints.
+
 
 ## 🫶 How to Cite:
 > If you find our work useful, please kindly cite our paper, thank you for your appreciation!
