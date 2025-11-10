@@ -58,7 +58,7 @@ data/train/xxx.npy
 data/val/yyy.npy
 data/test/zzz.npy
 ```
-### [NOTICE]
+### [NOTICE]❗️
 
 - **In this repository, we already provide four-year ground-truth typhoon records from HURDAT2, and the corresponding GPT-4o generated language descriptions, as well as the MiniLM generated language embeddings for you to try. However, in our own experiments, we use over 20+ years' Typhoon records and LLM-generated natural language descriptions as our database.**
 
