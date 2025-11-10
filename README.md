@@ -72,7 +72,7 @@ X = data["input"]
 Y = data["target"]
 ```
 
-## 🚀 6.Training and Evaluation
+## 🚀 5.Training and Evaluation
 
 ```bash
 # Train
@@ -83,6 +83,24 @@ python eval_typhoformer.py
 
 ```
 >Training logs will be saved automatically under /checkpoints.
+> You can adjust model training-related configurations in ``:
+```
+`<Adjustable Configurations>:`
+DATA_DIR = "data"
+TRAIN_DIR = os.path.join(DATA_DIR, "train")
+VAL_DIR = os.path.join(DATA_DIR, "val")
+SAVE_DIR = "checkpoints"
+
+BATCH_SIZE = 1
+NUM_EPOCHS = 100
+LR = 1e-4
+WEIGHT_DECAY = 1e-5
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+INPUT_LEN = 12
+PRED_LEN = 1
+D_NUM = 14
+D_TEXT = 384 #dim of language embedding (all-MiniLM-L6-v2）
+```
 
 
 ## 🫶 How to Cite:
