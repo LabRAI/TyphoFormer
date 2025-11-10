@@ -19,12 +19,12 @@ TyphoFormer/
 │   ├── val/
 │   └── test/
 │
-├── embedding_chunks/          # Sentence-transformer text embeddings
+├── embedding_chunks/          # LLM generated semantic descriptions are embeded by sentence-transformer
 │   ├── emb_chunk_000.npy
 │   ├── ......
 │   ├── emb_chunk_006.npy ...
 │
-├── HURDAT_2new_3000.csv       # Raw typhoon dataset, includes 4 years' typhoon data
+├── HURDAT_2new_3000.csv       # Raw typhoon dataset, includes 4 years' typhoon data here as an example
 ├── generate_text_description_new.py   # GPT-based language generation
 ├── generate_text_embeddings.py        # Embedding generation via MiniLM
 ├── prepare_typhoformer_data.py        # Dataset preparation script
