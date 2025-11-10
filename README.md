@@ -102,6 +102,11 @@ D_NUM = 14
 D_TEXT = 384 #dim of language embedding (all-MiniLM-L6-v2）
 ```
 
+## 📊 6.Performance Results
+<img width="600" alt="image" src=" ">
+
+<img width="600" alt="image" src=" ">
+
 
 ## 🫶 How to Cite:
 > If you find our work useful, please kindly cite our paper, thank you for your appreciation!
