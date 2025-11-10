@@ -84,7 +84,7 @@ python eval_typhoformer.py
 ```
 >Training logs will be saved automatically under /checkpoints.
 > You can adjust model training-related configurations in ``:
-```
+```bash
 # <Adjustable Configurations>
 DATA_DIR = "data"
 TRAIN_DIR = os.path.join(DATA_DIR, "train")
