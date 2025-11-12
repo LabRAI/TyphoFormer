@@ -20,9 +20,7 @@ from model.TyphoFormer import TyphoFormer  # import your model
 from utils import *
 
 
-# =========================================================
-# Configuration
-# =========================================================
+
 DATA_DIR = "data"
 TRAIN_DIR = os.path.join(DATA_DIR, "train")
 VAL_DIR = os.path.join(DATA_DIR, "val")
