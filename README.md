@@ -91,7 +91,7 @@ TRAIN_DIR = os.path.join(DATA_DIR, "train")
 VAL_DIR = os.path.join(DATA_DIR, "val")
 SAVE_DIR = "checkpoints"
 
-BATCH_SIZE = 1
+BATCH_SIZE = 8
 NUM_EPOCHS = 100
 LR = 1e-4
 WEIGHT_DECAY = 1e-5
