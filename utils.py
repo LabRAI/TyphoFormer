@@ -3,7 +3,7 @@ import torch
 
 
 def print_shape(name, tensor, indent=0):
-    """打印张量名称和维度"""
+    """Print Tensor's name and Dimension, used for debug"""
     prefix = " " * indent
     if tensor is None:
         print(f"{prefix}{name}: None")
