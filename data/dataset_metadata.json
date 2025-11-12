@@ -6,6 +6,6 @@
     "train_storms": 73,
     "val_storms": 10,
     "test_storms": 15,
-    "total_samples": 1787,
+    "total_samples": 1869,
     "feature_dim": 384
 }
