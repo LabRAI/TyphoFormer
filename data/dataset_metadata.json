@@ -1,5 +1,5 @@
 {
-    "input_csv": "HURDAT_2new_3000_with_descriptions_clean.csv",
+    "input_csv": "HURDAT_2new_3000_with_descriptions.csv",
     "embedding_dir": "embedding_chunks",
     "input_len": 12,
     "pred_len": 1,
