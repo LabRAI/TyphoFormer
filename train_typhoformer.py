@@ -69,7 +69,7 @@ def haversine_loss(pred, target):
     Compute mean Haversine distance (km) between predicted and target coordinates.
     pred, target: (B, T, 2)
     """
-    R = 6371.0  # Earth radius in km
+    R = 6371.0  # Earth radius in kilometers(km)
     lat1, lon1 = torch.deg2rad(pred[..., 0]), torch.deg2rad(pred[..., 1])
     lat2, lon2 = torch.deg2rad(target[..., 0]), torch.deg2rad(target[..., 1])
     dlat = lat2 - lat1
@@ -80,24 +80,7 @@ def haversine_loss(pred, target):
     return (R * c).mean()
 
 
-# =========================================================
 # Training Function
-# =========================================================
-# def train_one_epoch(model, loader, optimizer, criterion):
-#     model.train()
-#     total_loss = 0.0
-#     for X, Y in tqdm(loader, desc="Training", leave=False):
-#         X, Y = X.to(DEVICE), Y.to(DEVICE)
-#         optimizer.zero_grad()
-
-#         pred = model(X)
-#         loss = criterion(pred, Y)
-#         loss.backward()
-#         optimizer.step()
-
-#         total_loss += loss.item() * X.size(0)
-#     return total_loss / len(loader.dataset)
-
 def train_one_epoch(model, loader, optimizer, criterion):
     model.train()
     total_loss = 0.0
@@ -135,22 +118,6 @@ def train_one_epoch(model, loader, optimizer, criterion):
     return avg_loss, avg_mae
 
 
-# def evaluate(model, loader, criterion):
-#     model.eval()
-#     total_loss = 0.0
-#     with torch.no_grad():
-#         for X, Y in tqdm(loader, desc="Validation", leave=False):
-#             X, Y = X.to(DEVICE), Y.to(DEVICE)
-
-#             X_num = X[..., :D_NUM]
-#             X_text = X[..., D_NUM:]
-#             y_last = Y[:, 0, :]
-
-#             pred = model(X_num, X_text, y_last, pred_steps=Y.shape[1])
-#             loss = criterion(pred, Y)
-#             total_loss += loss.item() * X.size(0)
-#     return total_loss / len(loader.dataset)
-
 def evaluate(model, loader, criterion):
     model.eval()
     total_loss, total_mae = 0.0, 0.0
@@ -177,47 +144,7 @@ def evaluate(model, loader, criterion):
     return avg_loss, avg_mae
 
 
-# =========================================================
 # Main Training Loop
-# =========================================================
-# def main():
-#     print(f"Training TyphoFormer on {DEVICE}")
-
-#     train_ds = TyphoonDataset(TRAIN_DIR)
-#     val_ds = TyphoonDataset(VAL_DIR)
-#     train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
-#     val_loader = DataLoader(val_ds, batch_size=BATCH_SIZE, shuffle=False)
-
-#     cfg = {
-#     "model": {
-#         "input_dim": train_ds[0][0].shape[-1],  # 数值特征维度
-#         "text_dim": 384,                        # 语言embedding维度（all-MiniLM-L6-v2 输出维度）
-#         "embed_dim": 128,                       # 融合后隐层维度
-#         "output_dim": 2,                        # 纬度: [lat, lon]
-#         "input_len": 12,                        # 输入时间步
-#         "pred_len": 1                           # 预测时间步
-#     }
-#     }
-#     model = TyphoFormer(cfg)
-
-#     optimizer = optim.Adam(model.parameters(), lr=LR, weight_decay=WEIGHT_DECAY)
-#     criterion = nn.MSELoss()  # or use haversine_loss
-
-#     best_val_loss = float("inf")
-
-#     for epoch in range(NUM_EPOCHS):
-#         train_loss = train_one_epoch(model, train_loader, optimizer, criterion)
-#         val_loss = evaluate(model, val_loader, criterion)
-
-#         print(f"Epoch {epoch+1}/{NUM_EPOCHS} | Train Loss: {train_loss:.6f} | Val Loss: {val_loss:.6f}")
-
-#         if val_loss < best_val_loss:
-#             best_val_loss = val_loss
-#             torch.save(model.state_dict(), os.path.join(SAVE_DIR, "best_model.pt"))
-#             print(f"Saved best model at epoch {epoch+1} (Val Loss={val_loss:.6f})")
-
-#     print("Training completed!")
-
 def main():
     print(f"Training TyphoFormer on {DEVICE}")
     start_time = time.time()
@@ -226,19 +153,6 @@ def main():
     train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=BATCH_SIZE, shuffle=False)
 
-    # 配置参数
-    # cfg = {
-    #     "model": {
-    #         "input_dim": D_NUM, #数值特征维度
-    #         "text_dim": D_TEXT, #语言embedding维度(all-MiniLM-L6-v2输出维度)
-    #         "embed_dim": 128, #融合后隐层维度
-    #         "output_dim": 2, #output coordinate [lat, lon]
-    #         "input_len": INPUT_LEN, #输出时间步
-    #         "pred_len": PRED_LEN, #预测时间步
-    #         "d_model": 256,
-    #         "d_ff": 1024
-    #     }
-    # }
     cfg = {
     "model": {
         # === 输入结构 ===
@@ -260,7 +174,6 @@ def main():
         }
     }
 
-    #model = TyphoFormer(cfg).to(DEVICE)
     model = TyphoFormer(cfg, debug = False).to(DEVICE)
     optimizer = optim.Adam(model.parameters(), lr=LR, weight_decay=WEIGHT_DECAY)
     criterion = nn.MSELoss()  # 可切换为 haversine_loss
