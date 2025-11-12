@@ -19,7 +19,7 @@ from sentence_transformers import SentenceTransformer
 
 
 # Configuration
-INPUT_CSV = "HURDAT_2new_3000_with_descriptions_clean.csv"
+INPUT_CSV = "HURDAT_2new_3000_with_descriptions.csv"
 OUTPUT_DIR = "embedding_chunks"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
