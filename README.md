@@ -8,8 +8,8 @@ Language-Augmented Transformer for Accurate Typhoon (Hurricane) Track Forecastin
 @inproceedings{lityphoformer2025,
 author = {Li, Lincan and Ozguven, Eren Erman and Zhao, Yue and Wang, Guang and Xie, Yiqun and Dong, Yushun},
 title = {TyphoFormer: Language-Augmented Transformer for Accurate Typhoon Track Forecasting},
-location = {Minnesota, MN, USA},
-booktitle={33rd ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems (ACM SIGSPATIAL 2025)}, 
+booktitle={33rd ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems (ACM SIGSPATIAL 2025)},
+location = {Minnesota, MN, USA}, 
 year = {2025}
 }
 ```
