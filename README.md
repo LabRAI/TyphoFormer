@@ -115,6 +115,11 @@ D_NUM = 14
 D_TEXT = 384 #dim of language embedding (all-MiniLM-L6-v2）
 ```
 
+<p align="center">
+  <img src="https://github.com/LabRAI/TyphoFormer/blob/main/assets/test_code_visualization.gif" alt="code demo" width="800">
+</p>
+
+
 ## 📊 6.Performance Results
 <img width="600" alt="image" src="https://github.com/LabRAI/TyphoFormer/blob/main/assets/Table1_Experimental_results.png">
 
