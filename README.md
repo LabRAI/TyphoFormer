@@ -28,22 +28,22 @@ TyphoFormer/
 │
 │
 ├── data/                      # Processed Typhoon datasets in '.npy' files
-│   ├── train/
+│   ├── train/                 # contains `train_part1.zip` and `train_part2.zip`. Unzip and put all `.npy` files under "train" folder directly.
 │   ├── val/
-│   └── test/
+│   └── test/                  # contains `test.zip`. Unzip to get all the `.npy` files.
 │
 ├── embedding_chunks/          # LLM generated semantic descriptions are embeded by sentence-transformer
 │   ├── emb_chunk_000.npy
 │   ├── ......
 │   ├── emb_chunk_006.npy ...
 │
-├── HURDAT_2new_3000.csv       # Raw typhoon dataset, includes 4 years' typhoon data here as an example
+├── HURDAT_2new_3000.csv       # Raw typhoon dataset, includes 5 years' typhoon data here as an example
 ├── generate_text_description_new.py   # GPT-based language generation
 ├── generate_text_embeddings.py        # Embedding generation via MiniLM-L6-v2
 ├── prepare_typhoformer_data.py        # Dataset preparation script
 ├── train_typhoformer.py               # Training entry point
 ├── eval_typhoformer.py                # Evaluation script
-└── README.md
+└── utils.py
 ```
 
 ## ⚙️ 3. Environment Setup
@@ -73,7 +73,7 @@ data/test/zzz.npy
 ```
 ### ❗️[NOTICE]
 
-- **In this repository, we already provide four-year ground-truth typhoon records from HURDAT2, and the corresponding GPT-4o generated language descriptions, as well as the MiniLM generated language embeddings for you to try. However, in our own experiments, we use over 20+ years' Typhoon records and LLM-generated natural language descriptions as our database.**
+- **In this repository, we already provide five-year ground-truth typhoon records from HURDAT2, and the corresponding GPT-4o generated language descriptions, as well as the MiniLM generated language embeddings for you to try. However, in our own experiments, we use over 20+ years' Typhoon records and LLM-generated natural language descriptions as our database.**
 
 - The raw numerical typhoon records from 2020-2024 is provided in `HURDAT_2new_3000.csv`
 - If you want to generate your own language context descriptions using GPTs, make sure you have a valid OpenAI API Key and put it in the `generate_text_description_new.py`.
@@ -86,6 +86,8 @@ Y = data["target"]
 ```
 
 ## 🚀 5.Training and Evaluation
+
+> 😄 We alrdeay provided a 5-year processed data, which can directly used for model training, so that you can run model training and evaluation directly. 
 
 ```bash
 # Train
