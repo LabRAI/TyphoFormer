@@ -167,7 +167,7 @@ def main():
         "d_model": 256,                         # 模型维度 (PGF 输出维度)
         "d_ff": 1024,                           # 前馈层隐藏维度
         "num_heads": 4,                         # 多头注意力头数
-        "num_layers": 3,                        # STAEformer 层数
+        "num_layers": 3,                        # ST-Transformer 层数
         "dropout": 0.1,                         # Dropout 比例
         }
     }
