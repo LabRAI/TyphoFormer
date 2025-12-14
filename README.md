@@ -11,7 +11,6 @@ title = {TyphoFormer: Language-Augmented Transformer for Accurate Typhoon Track 
 booktitle={33rd ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems (ACM SIGSPATIAL 2025)},
 location = {Minnesota, MN, USA},
 url = {https://doi.org/10.1145/3748636.3763223},
-doi = {10.1145/3748636.3763223},
 year = {2025}
 }
 ```
